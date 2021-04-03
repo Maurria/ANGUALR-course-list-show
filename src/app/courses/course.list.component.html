@@ -1,0 +1,22 @@
+<main class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Código</th>
+        <th>Lançamento</th>
+        <th>Avaliação</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let course of courses">
+      <tr>
+        <td> R${{ course.nome }}</td>
+        <td> R${{ course.price }}</td>
+        <td>{{ course.code | uppercase | replace: '-': ' ' }}</td>
+        <td>{{ course.releaseDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ course.rating }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
